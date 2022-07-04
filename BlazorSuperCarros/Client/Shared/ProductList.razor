@@ -1,0 +1,66 @@
+﻿<ul class="list-unstyled">
+    @foreach(var product in products)
+    {
+        <li class="media my-3">
+            <div class="media-img-wrapper mr-2">
+                <a href="#">
+                    <img class="media-img" src="@product.ImageUrl" alt="@product.Title"/>
+                </a>
+            </div>
+            <div class="media-body">
+                <a href="#">
+                    <h4 class="mb-0">@product.Title</h4>
+                </a>
+                <p>@product.Description</p>
+                <h5 class="price">
+                    $@product.price
+                </h5>
+            </div>
+        </li>
+    }
+</ul>
+
+@code {
+    private static List<Product> products = new List<Product>
+    {
+        new Product
+        {
+            Id =1,
+            Title = "Toyota Rav 4 2020",
+            Description = "Jeepeta blanca, motor 6 cilindros, transmision automatica, traccion 4WD, interior ladrillo, nueva",
+            ImageUrl = "https://casauto.com/Files/Products/119977_1.jpg",
+            price = 39500.00m,//En moneda de gringolandia
+        },
+        new Product
+        {
+            Id =2,
+            Title = "Land Rover Range Rover Sport SuperCharge 2016",
+            Description = "Jeepeta negra, motor 6 cilindros, transmision automatica, traccion 4WD, interior negro, nueva",
+            ImageUrl = "https://www.astonmartinwashingtondc.com/imagetag/2595/main/l/Used-2016-Land-Rover-Range-Rover-Sport-Supercharged-Dynamic.jpg",
+            price = 60000.00m,//En moneda de gringolandia
+        },
+        new Product
+        {
+            Id =3,
+            Title = "Hyundai Elantra 2009",
+            Description = "Sedan negro, motor 4 cilindros, transmison automatica, traccion delantera, interior crema, usado",
+            ImageUrl = "https://img.supercarros.com/AdsPhotos/500x500/0/10520344.jpg",
+            price = 415000.00m,//rd
+        },new Product
+        {
+            Id =4,
+            Title = "Toyota Yaris 2009",
+            Description = "Sedan blanco, motor 4 cilindros, transmison automatica, traccion delantera, interior negro, usado",
+            ImageUrl = "https://cs.copart.com/v1/AUTH_svc.pdoc00001/PIX469/88b47c8d-9517-4cd7-8242-611a1b11f6f8.JPG",
+            price = 585000.00m,//rd
+        },
+        new Product
+        {
+            Id =5,
+            Title = "Ford Mustang 2009",
+            Description = "Deportivo rojo, motor 6 cilindros, transmison mecanica, traccion 2WD, interior negro, usado",
+            ImageUrl = "https://img.supercarros.com/AdsPhotos/500x500/0/7313731.jpg",
+            price = 415000.00m,//rd
+        }
+    };
+}
